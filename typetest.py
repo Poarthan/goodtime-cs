@@ -1,7 +1,9 @@
 import random
 import time
 
-with open("/usr/share/dict/words") as f:
+#filename="/usr/share/dict/words"
+filename="./wordlist.txt"
+with open(filename) as f:
     words = f.readlines()
 
 # remove whitespace
@@ -47,6 +49,8 @@ start_time = time.time()
 end = input()
 end_time = time.time()
 total_time = end_time - start_time
+if total_time > 3:
+    total_time=total_time-1.5
 print(f"Total time: {total_time} seconds")
 
 # now calculate accuracy and characters per minute
